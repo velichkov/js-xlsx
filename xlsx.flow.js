@@ -8413,7 +8413,7 @@ function write_comments_vml(rId, comments) {
 		writextag('v:fill', writextag("o:fill", null, {type:"gradientUnscaled", 'v:ext':"view"}), {'color2':"#BEFF82", 'angle':"-180", 'type':"gradient"}),
 		writextag("v:shadow", null, {on:"t", 'obscured':"t"}),
 		writextag("v:path", null, {'o:connecttype':"none"}),
-		'<v:textbox><div style="text-align:left"></div></v:textbox>',
+		'<v:textbox style="mso-fit-shape-to-text:t"><div style="text-align:left"></div></v:textbox>',
 		'<x:ClientData ObjectType="Note">',
 			'<x:MoveWithCells/>',
 			'<x:SizeWithCells/>',
@@ -8422,7 +8422,8 @@ function write_comments_vml(rId, comments) {
 			writetag('x:AutoFill', "False"),
 			writetag('x:Row', String(c.r)),
 			writetag('x:Column', String(c.c)),
-			'<x:Visible/>',
+			/*Comments should not be visible by default*/
+			/*'<x:Visible/>',*/
 		'</x:ClientData>',
 	'</v:shape>'
 	]); });
